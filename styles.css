@@ -1,0 +1,408 @@
+:root {
+    --characterOverviewNav-width: 110px;
+    --standardNav-width: 220px;
+    --java-orange: #de6902;
+    --python-blue: #366f9f;
+    --django-green: #0c4a33;
+    --python-yellow: #fde672;
+    --postgres-blue: #35638e;
+    --pytorch-red: #ec4927;
+    --neworange: var(--java-orange);
+}
+
+#resume{
+    transition:transform 2s ease;
+    transform: translate(200px,10px);
+    background:linear-gradient(to bottom, var(--java-orange), white);
+    background-size:400% 400%;
+    animation:gradient 2s linear infinite;
+    max-width:30%;
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+html{
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(161deg, var(--python-blue), lightblue, #9575ca, var(--java-orange));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;}
+
+h1,h2{
+    text-align: center;
+}
+
+#Overview{
+    background: none;
+    border-radius: 10px;
+    border: 3px solid lightblue;
+    display:grid;
+    grid-template-areas: "projects skillWindow";
+    margin:2%;
+    padding:1%;
+    grid-template-columns: 30% 1fr;
+}
+
+#Projects{
+    background:linear-gradient(to left, rgba(0,0,0,0) 16px,white 10px, white 100%);
+    grid-area: projects;
+    border:3px solid black;
+    border-radius: 10px;
+    overflow-y: scroll;
+    max-height:80vh;
+}
+#Projects>h3{
+    text-align: center;
+    background-color: lightblue;
+}
+
+.project{
+    margin:3%;
+    border:2px solid #333232;
+    border-radius: 10px;
+}
+.project *{
+    margin:1rem;
+}
+
+
+#SkillsOverview{
+    grid-area: skillWindow;
+    border-radius: 10px;
+    display: grid;
+    height:auto;
+    margin:10px;
+    grid-template-areas: "active other";
+    grid-template-columns: 1% auto;
+    max-height:80vh;
+}
+
+#highlightedSkills{
+    background:white;
+    grid-area: active;
+    border-radius: 10px;
+    padding: 10px;
+    margin:10px;
+}
+
+#otherSkills{
+    background:linear-gradient(to top, rgba(0,0,0,0) 16px,white 10px, white 100%);
+    grid-area: other;
+    border: 3px solid green;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height:80vh;
+    overflow-x: scroll;
+    transition:transform 2s ease;
+
+}
+
+.skill{
+    box-sizing: border-box;
+    position:relative;
+    display:inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    grid-area: skill;
+    min-width:44%;
+    max-width:44%;
+    margin:2%;
+    transform: translate(0px,0px);
+    transition: background-color 2s ease;
+}
+
+.skill h5{
+    position: absolute;
+    top: -2.2em;
+    left: 0.3rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: #fff;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:calc(100% - 3rem);
+}
+
+.skill > p{
+    text-align: center;
+    padding: 0 0.2rem;
+}
+
+#Overview *::-webkit-scrollbar {
+    width: 15px;
+    height: 16px;
+    background: transparent;
+}
+
+#Overview-scrollbar *::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#Overview *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* Optional corner (if present) also transparent */
+#Overview *::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+@property --pyCol1 {
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+@property --pyCol2 {
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+[data-hoverstyle="python"]{
+    background: linear-gradient(to right, var(--pyCol1), var(--pyCol2));
+    transition: --pyCol1 1s, --pyCol2 1.5s, transform 3s ease;
+}
+
+[data-hoverstyle="python"]:hover, .python-hover{
+    --pyCol1: var(--python-blue);
+    --pyCol2: var(--python-yellow);
+}
+
+[data-hoverstyle="java"]{
+    background: white;
+    transition: background 3s, background-image .5s ease-in-out, transform 3s ease;
+}
+
+[data-hoverstyle="java"]:hover, .java-hover{
+    background: var(--java-orange);
+    animation: java 2s ease;
+}
+
+
+@keyframes java {
+    from{background-image: url('logo-java.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: -50px;
+    }
+    to{background-image: url('logo-java.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        }
+
+}
+
+@property --webCol1{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --webCol2{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --webCol3{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --webCol4{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+
+[data-hoverstyle="webDev"]{
+    background:linear-gradient(271deg, var(--webCol1), var(--webCol2), var(--webCol3), var(--webCol4));;
+    background-size: 400% 400%;
+    transition:--webCol1 3s, --webCol2 2s, --webCol3 2s, --webCol4 2s, transform 3s ease;
+    animation: gradient 15s ease infinite;
+}
+
+[data-hoverstyle="webDev"]:hover, .webDev-hover{
+    background-size: 400% 400%;
+    --webCol1: #704a95;
+    --webCol2: #ef6424;
+    --webCol3: #f0c35b;
+    --webCol4: #0772b1;
+}
+
+@property --softwareCol1{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --softwareCol2{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --softwareCol3{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --softwareCol4{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+
+[data-hoverstyle="softwareDev"]{
+    background:linear-gradient(314deg, var(--softwareCol1), var(--softwareCol2), var(--softwareCol3), var(--softwareCol4));;
+    background-size: 400% 400%;
+    transition:--softwareCol1 3s, --softwareCol2 2s, --softwareCol3 2s, --softwareCol4 2s, background-size 2s, transform 3s ease;
+    animation: gradient 9s ease infinite;
+}
+
+[data-hoverstyle="softwareDev"]:hover, .softwareDev-hover{
+    background-size: 400% 400%;
+    --softwareCol1: #ec2127;
+    --softwareCol2: #ac4f33;
+    --softwareCol3: #dfdf0e;
+    --softwareCol4: #25c6af;
+}
+
+@property --sqlCol1{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --sqlCol2{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --sqlCol3{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+@property --sqlCol4{
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+
+[data-hoverstyle="sql"]{
+    background:linear-gradient(161deg, var(--sqlCol1), var(--sqlCol2), var(--sqlCol3), var(--sqlCol4));
+    background-size: 400% 400%;
+    transition:--sqlCol1 3s, --sqlCol2 2s, --sqlCol3 2s, --sqlCol4 2s, transform 3s ease;
+    animation: gradient 11s ease infinite;
+}
+
+[data-hoverstyle="sql"]:hover, .sql-hover{
+    background-size: 400% 400%;
+    --sqlCol1: #ec2127;
+    --sqlCol2: #ac4f33;
+    --sqlCol3: #dfdf0e;
+    --sqlCol4: #25c6af;
+}
+
+@property --gitCol1 {
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+@property --gitCol2 {
+    syntax: '<color>';
+    initial-value: #82f8f0;
+    inherits: false;
+}
+
+@keyframes git{
+    from{background-image: url('git-icon2.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: -256px, center;
+    }
+    to{background-image: url('git-icon2.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-blend-mode: multiply;
+    }
+
+}
+
+[data-hoverstyle="git"]{
+    background:white;
+    transition:background 1.4s, transform 3s ease;
+}
+
+
+[data-hoverstyle="git"]:hover, .git-hover{
+    background: #c4aed8;
+    animation: git .5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes discord{
+    from{background-image: url('discord-icon.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: -256px, center;
+    }
+    to{background-image: url('discord-icon.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+
+    }
+
+}
+
+[data-hoverstyle="discord"]{
+    background:white;
+    transition:background 1.4s, transform 3s ease;
+    animation: gradient 6s ease infinite;
+}
+
+[data-hoverstyle="discord"]:hover, .discord-hover{
+    background: #5561f4;
+    animation: discord 2s ease;
+    animation-fill-mode: forwards;
+}
+
+[data-hoverstyle="discord"]:hover>p, .discord-hover>p{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+

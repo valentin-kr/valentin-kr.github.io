@@ -3,8 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jqueryLight.js"> </script>
+    <script src="scripts.js"></script>
 </head>
 <body>
-<h1> Header Text</h1>
+<h1> &lt;Valentin Kroll&gt; </h1>
+<h2> little resume / Project Website</h2>
+
+
+<div id="Overview">
+    <div id="Projects">
+        <h3>Projects</h3>
+        <div id ="characterHelper" class="project" data-skillList="django,djangoFS,webPage,swDesign,db,sql">
+            <h4> D&D Character Manager</h4>
+            <button>Focus Skills</button>
+            <p> As active D&D players my fellow students and I were oftentimes overwhelmed by the amount of information needed (in mind and in books) to play the game properly, let alone understand all of its mechanics and nuances. <br>As the django project for our third semester we planned the 'Character Helper', that allows easy and intuitive creation and management of multiple character sheets, that comprehensibly relais important game knowledge to the user in its interface and allows full focus on the actual game </p>
+        </div>
+        <div id ="pytorch-ngram" class="project" data-skillList="pytorch">
+            <h4>PyTorch nGram</h4>
+            <button>Focus Skills</button>
+            <p> As an entry into machine learning / AI software I programmed an ML model that can scan user given text data and calculate text output based on its given training data.  </p>
+        </div>
+        <div id ="scheduler" class="project" data-skillList="webPage,swDesign">
+            <h4>Practice Scheduler</h4>
+            <button>Focus Skills</button>
+            <h5> View Scheduler on <a href="https://kinderpraxis-kroll.de/termine/">kinderpraxis-kroll.de</a> </h5>
+            <p>Integration of a scheduling interface for a pediatric practice searching for free timeslots in the calendar, returning an e-Mail confirmation to the user and sending the appointment information to the scheduling API of the practice management software </p>
+        </div>
+        <div id ="objectRender" class="project" data-skillList="lwjgl,java">
+            <h4>Java .obj render Engine</h4>
+            <button>Focus Skills</button>
+            <p> This project started as a simple LWJGL Java Application to demonstrate basic understanding of the library and openGL for a computergraphics module. After finishing the module I added an interface and logic to render .obj files as 3D meshes with colors or textures</p>
+        </div>
+    </div>
+    <div id="SkillsOverview" class="skillView">
+        <div id ="otherSkills" class="skillView">
+            <div class="skill" data-hoverstyle="python" data-relatedSkills="django">
+            <h5>Python:</h5>
+                <p>Backend functionality and migration management in Django</p>
+            </div>
+            <div class="skill" data-hoverstyle="python" data-relatedSkills="pytorch">
+                <h5>Python:</h5>
+                <p>Building of custom n-gram models utilizing machine learning in the PyTorch framework</p>
+            </div>
+            <div class="skill" data-hoverstyle="java" data-relatedSkills="java">
+                <h5>Java:</h5>
+                <p>Application design with JFrame-based interfaces
+                    interfaces</p>
+            </div>
+            <div class="skill" data-hoverstyle="java" data-relatedSkills="javaIMG">
+                <h5>Java:</h5>
+                <p>Statistical analysis of image signals and application of point operators and filters to digital images
+                    classes</p>
+            </div>
+            <div class="skill" data-hoverstyle="java" data-relatedSkills="lwjgl">
+                <h5>Java:</h5>
+                <p>2D and 3D Rendering of .obj files in OpenGL through LWJGL</p>
+            </div>
+            <div class="skill" data-hoverstyle="webDev" data-relatedSkills="webPage">
+                <h5>Web-Development:</h5>
+                <p>Dynamic HTML (HTML, CSS, JS/jQuery) page design and user interface building</p>
+            </div>
+            <div class="skill" data-hoverstyle="webDev" data-relatedSkills="djangoFS">
+                <h5>Web-Development:</h5>
+                <p>Fullstack Development and implementation of Rest-API in the Django framework</p>
+            </div>
+            <div class="skill" data-hoverstyle="softwareDev" data-relatedSkills="swEng">
+                <h5>Software Development Pipelines:</h5>
+                <p>Waterfall, Agile, Scrum, V-Model, organization of team members, </p>
+            </div>
+            <div class="skill" data-hoverstyle="softwareDev" data-relatedSkills="swDesign">
+                 <h5>Software Development Pipelines:</h5>
+                 <p>System-Modeling (UML), RequirementBased Software Design</p>
+            </div>
+            <div class="skill" data-hoverstyle="sql" data-relatedSkills="sql">
+                 <h5>SQL</h5>
+                 <p>SQL Queries in PostgreSQL, the python pandas library and database modeling in django</p>
+            </div>
+            <div class="skill" data-hoverstyle="sql" data-relatedSkills="db">
+                 <h5>Relational Database Management</h5>
+                 <p>Abstraction of real-life data structures into relational databases. Database normalization up to the 4th normal form</p>
+            </div>
+            <div class="skill" data-hoverstyle="git" data-relatedSkills="git">
+                 <h5>Version Control / git</h5>
+                 <p>Firm understanding of version control, repository management and merge-handling in git systems</p>
+            </div>
+            <div class="skill" data-hoverstyle="discord" data-relatedSkills="discord">
+                 <h5>discord.js</h5>
+                 <p>Programming of a community bot, automated community moderation on Discord servers using the discord.js documentation</p>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
