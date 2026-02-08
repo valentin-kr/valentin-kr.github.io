@@ -211,12 +211,12 @@ h1,h2{
 
 
 @keyframes java {
-    from{background-image: url('logo-java.png');
+    from{background-image: url('res/logo-java.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: -50px;
     }
-    to{background-image: url('logo-java.png');
+    to{background-image: url('res/logo-java.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -348,12 +348,12 @@ h1,h2{
 }
 
 @keyframes git{
-    from{background-image: url('git-icon2.png');
+    from{background-image: url('res/git-icon2.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: -256px, center;
     }
-    to{background-image: url('git-icon2.png');
+    to{background-image: url('res/git-icon2.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: right center;
@@ -375,12 +375,12 @@ h1,h2{
 }
 
 @keyframes discord{
-    from{background-image: url('discord-icon.png');
+    from{background-image: url('res/discord-icon.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: -256px, center;
     }
-    to{background-image: url('discord-icon.png');
+    to{background-image: url('res/discord-icon.png');
         background-size:contain;
         background-repeat: no-repeat;
         background-position: right center;
