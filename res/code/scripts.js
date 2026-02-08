@@ -11,8 +11,8 @@ $(document).ready(function(){
 
     let projectSkillMap = new Map()
 
-
-    $(".project").each(function(){
+    let projectClass= $(".project")
+    $(projectClass).each(function(){
 
         let skillArray = $(this).attr("data-skillList").split(',')
         let resultArray = [];
@@ -30,7 +30,7 @@ $(document).ready(function(){
         })
     })
 
-    $(".project").hover(function(){
+    $(projectClass).hover(function(){
         $(".skill").each(function(){
          $(this).css("opacity","0.7");
         })
@@ -59,7 +59,8 @@ $(document).ready(function(){
 let arrangeSkills = function(elArray){
     //save previous order
     let preSkillOrder = document.querySelectorAll("#otherSkills>.skill")
-    $(".skill").each(function(){
+    let skills = $(".skill")
+    $(skills).each(function(){
         $(this).data("oldPosX",$(this).position().left)
         $(this).data("oldPosY",$(this).position().top)
     })
@@ -68,7 +69,7 @@ let arrangeSkills = function(elArray){
         $("#otherSkills").prepend(element);
     })
     //save new Position, calculate transformation. (old->current, so old-new
-    $(".skill").each(function(){
+    $(skills).each(function(){
         $(this).data("newPosY",$(this).position().top)
         $(this).data("newPosX",$(this).position().left)
     })
@@ -82,8 +83,7 @@ let arrangeSkills = function(elArray){
 
         // CHANGE TRANSITION LENGTH FOR TRANSFORMS
         var transitions  =getComputedStyle($(this).get(0)).getPropertyValue("transition")
-        var transitionsX =transitions.replace(", transform 3s", "")
-        el.style.transition = transitionsX
+        el.style.transition = transitions.replace(", transform 3s", "")
         el.style.transform="translate("+posChangeX+"px,"+posChangeY+"px)";
 
         //REVERT TRANSFORMS
